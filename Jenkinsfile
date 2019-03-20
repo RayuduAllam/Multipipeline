@@ -3,9 +3,8 @@ try{
 	    properties([parameters([choice(choices: ['master', 'dev', 'qa', 'staging'], description: 'Choose branch to build and deploy', name: 'gitBranch')]), pipelineTriggers([pollSCM('')])])
     stage('Git Checkout'){
 		git credentialsId: 'github', 
-		    url: 'https://github.com/javahometech/my-app',
-			branch: "${params.gitBranch}"
-	}
+		    url: 'https://github.com/RayuduAllam/Multipipeline',
+				}
 	
 	stage('Maven Build'){
 		sh 'mvn clean package'
